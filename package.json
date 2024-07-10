@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.1.4",
     "@popperjs/core": "^2.11.8",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "next": "14.2.4",
     "react": "^18",
