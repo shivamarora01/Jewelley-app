@@ -12,6 +12,10 @@
   }
   ```
 */
+
+  
+import Image from 'next/image';
+
 const products = [
     {
         id: 1,
@@ -79,36 +83,37 @@ const products = [
     },
     // Add more products as needed
 ];
-  
-  export default function ProductGrid3() {
-    return (
-        <div className="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
-          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
-            {products.map((product) => (
-              <div key={product.id} className="group text-sm">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                  <img
-                    alt={product.imageAlt}
-                    src={product.imageSrc}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-                <h3 className="mt-4 font-medium text-gray-900">{product.name}</h3>
-                <p className="italic text-gray-500">{product.availability}</p>
-                <p className="mt-2 font-medium text-gray-900">₹{product.price}</p>
-                <div className="mt-6">
-                <a
-                  href={product.href}
-                  className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  Add to bag<span className="sr-only">, {product.name}</span>
-                </a>
-              </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-    )
-  }
-  
+export default function ProductGrid3() {
+  return (
+    <div className="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+        {products.map((product) => (
+          <div key={product.id} className="group text-sm">
+            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+              <Image
+                alt={product.imageAlt}
+                src={product.imageSrc}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <h3 className="mt-4 font-medium text-gray-900">{product.name}</h3>
+            <p className="italic text-gray-500">{product.availability}</p>
+            <p className="mt-2 font-medium text-gray-900">₹{product.price}</p>
+            <div className="mt-6">
+              <a
+                href={product.href}
+                className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+              >
+                Add to bag<span className="sr-only">, {product.name}</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

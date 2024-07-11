@@ -17,8 +17,8 @@ function TrendingCat() {
     speed: 500,
     slidesToShow: 4, // Change slidesToShow to 2 for better mobile view
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     arrows: true,
     adaptiveHeight: true, // Enable adaptive height
     responsive: [
