@@ -100,7 +100,7 @@ export default function Navbar() {
             <div className="flex flex-shrink-0 items-center lg:mx-5">
               <img
                 alt="Your Company"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="../Logo.svg"
                 className="h-8 w-auto"
               />
             </div>
